@@ -1,0 +1,42 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Trade {
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now())
+  
+  dateEntry   String
+  dateExit    String?
+  instrument  String
+  position    String   // "Long" atau "Short"
+  status      String   @default("Closed") // "Running", "Closed", "Pending"
+  entry       Float
+  exit        Float?
+  tp          Float?
+  sl          Float?
+  lot         Float
+  fees        Float
+  pnl         Float
+  rate        Float
+  result      String   // "Win" atau "Loss" atau "Running"
+  setup       String?
+  timeframe   String?
+  notes       String?  // Catatan tambahan (opsional)
+}
+
+model Transaction {
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now())
+  
+  date        String
+  type        String   // "Deposit" atau "Withdrawal"
+  amount      Float
+  note        String?
+}
