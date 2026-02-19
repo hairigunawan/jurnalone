@@ -22,11 +22,11 @@ export default function AddTransactionModal({ isOpen, onClose, onAdd }: Props) {
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
 
-    const data = {
-      date: formData.get("date"),
-      type: formData.get("type"),
+    const data: Partial<Transaction> = {
+      date: formData.get("date") as string,
+      type: formData.get("type") as string,
       amount: parseFloat(formData.get("amount") as string),
-      note: formData.get("note"),
+      note: formData.get("note") as string | null,
     };
 
     try {

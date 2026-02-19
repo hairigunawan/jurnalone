@@ -285,7 +285,7 @@ export default function AddTradeModal({ isOpen, onClose, onAdd, trade }: Props) 
               </div>
               <div>
                 <label className="block text-[10px] font-medium text-gray-500 mb-1">Timeframe</label>
-                <input name="timeframe" defaultValue={trade?.timeframe} placeholder="e.g. H1, M15" className="w-full p-2 rounded-lg border border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white text-xs outline-none" />
+                <input name="timeframe" defaultValue={trade?.timeframe ?? undefined} placeholder="e.g. H1, M15" className="w-full p-2 rounded-lg border border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white text-xs outline-none" />
               </div>
             </div>
 
@@ -372,11 +372,11 @@ export default function AddTradeModal({ isOpen, onClose, onAdd, trade }: Props) 
               )}
               <div>
                 <label className="block text-[10px] font-medium text-gray-500 mb-1">Setup / Strategi</label>
-                <input name="setup" defaultValue={trade?.setup} placeholder="e.g. SMC, Breakout" className="w-full p-2 rounded-lg border border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white text-xs outline-none" />
+                <input name="setup" defaultValue={trade?.setup ?? undefined} placeholder="e.g. SMC, Breakout" className="w-full p-2 rounded-lg border border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white text-xs outline-none" />
               </div>
               <div>
                 <label className="block text-[10px] font-medium text-gray-500 mb-1">Catatan</label>
-                <textarea name="notes" defaultValue={trade?.notes} rows={1} className="w-full p-2 rounded-lg border border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white text-xs outline-none" />
+                <textarea name="notes" defaultValue={trade?.notes ?? undefined} rows={1} className="w-full p-2 rounded-lg border border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-white text-xs outline-none" />
               </div>
             </div>
 
